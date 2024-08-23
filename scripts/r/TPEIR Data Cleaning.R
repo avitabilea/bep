@@ -90,7 +90,7 @@ prog_level_data <- pivot_wider(clean,
   relocate(epp, school_year, BEP, post, alt, post_bac, trad, contains("bl"))
 
 # Save data to .csv
-xlsx::write.xlsx(prog_level_data, here("data", "cleaned", "tx_teacher_certs_by_program.xlsx"))
+write.csv(prog_level_data, here("data", "cleaned", "tx_teacher_certs_by_program.csv"))
 
 #Plot data----
 
