@@ -84,8 +84,6 @@ prog_level_data <- pivot_wider(clean,
   # Calculate number of bilingual certs across all program types
   mutate(bl = sum(c_across(contains("_bl")))) %>%
   ungroup %>%
-  # Calculate the proportion of teachers at traditional EEPs that get their certification in Bilingual Education
-  mutate(trad_bl_prop = trad_bl/trad) %>%
   # Rearrange dataset
   relocate(epp, school_year, BEP, post, alt, post_bac, trad, contains("bl"))
 
