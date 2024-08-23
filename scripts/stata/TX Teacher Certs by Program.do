@@ -13,7 +13,7 @@ clear
 ********************************************************************************
 *Import data********************************************************************
 ********************************************************************************
-use "${dropbox}Bilingual Education Program\data\cleaned\tx_teacher_certs_by_program.dta", clear 
+import delimited "https://github.com/avitabilea/bep/blob/master/data/cleaned/tx_teacher_certs_by_program.csv", delim("|")
 
 ********************************************************************************
 *Label variables****************************************************************

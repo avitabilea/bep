@@ -89,6 +89,9 @@ prog_level_data <- pivot_wider(clean,
   # Rearrange dataset
   relocate(epp, school_year, BEP, post, alt, post_bac, trad, contains("bl"))
 
+# Save data to .csv
+write.table(prog_level_data, here("data", "cleaned", "tx_teacher_certs_by_program.csv"), sep = "|")
+
 #Plot data----
 
 # Number of traditional Bilingual Educator certificates by BEP participation and year
@@ -144,9 +147,3 @@ ggplot(results, aes(x = year, y = estimate)) +
   ) +
   theme_minimal() +
   scale_x_continuous(breaks = c(2012:2021), minor_breaks = c())
-
-
-test <- filter(prog_level_data, trad_bl>0)
-table(test$school_year)
-
-haven::write_dta(prog_level_data, here("data", "cleaned", "tx_teacher_certs_by_program.dta"))
